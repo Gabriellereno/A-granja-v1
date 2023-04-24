@@ -1,7 +1,6 @@
 .slideBg {
   width: 100%;
-  height: 300px;
-  background: linear-gradient(180deg, #0d8d4228 55%, #0e832227 100%);
+  height: 275px;
   padding: 20px 0px;
   overflow: hidden;
 }
@@ -15,7 +14,7 @@
 }
 .slideItem {
   border-radius: 8px;
-  border: #fceb02 3px outset;
+  border: #f7f3ba 3px outset;
   height: 230px;
   flex: 1;
   transition: 0.4s ease;
@@ -25,23 +24,23 @@
   filter: drop-shadow(5px 5px 5px #0000004d);
   color: #fff;
 }
-.slide .slideItem:nth-of-type(1) {
+.slide .slideItem:nth-of-type(2) {
   background: url(../../../public/frete2.jpg) no-repeat center;
   background-size: cover;
 }
 
-.slide .slideItem:nth-of-type(2) {
+.slide .slideItem:nth-of-type(3) {
   background: url(../../../public/veterinário.jpg) no-repeat center;
   background-size: cover;
 }
 
-.slide .slideItem:nth-of-type(3) {
+.slide .slideItem:nth-of-type(4) {
   background: url(../../../public/vantagens.jpg) no-repeat;
-  background-position: 0% 100%;
+  background-position: center;
   background-size: cover;
 }
 
-.slide .slideItem:nth-of-type(4) {
+.slide .slideItem:nth-of-type(1) {
   background: url(../../../public/50anos.jpg) no-repeat center;
   background-size: cover;
 }
@@ -49,13 +48,13 @@
   flex: 2;
 }
 .slideItem:hover .slideContent {
-  background-color: #0000007a;
+  background-color: #0000007c;
   transition: 0.4s;
 }
 
 .slideContent {
   padding: 20px;
-  /* border-radius: 4px; */
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -63,14 +62,21 @@
   height: 100%;
 }
 .slideContent h1 {
-  background-image: linear-gradient(180deg, #ffffff 55%, #fceb02 55%);
+  background-image: linear-gradient(180deg, #ffffff 100%, #fceb02 100%);
   background-clip: text;
   color: transparent;
 }
+.slideItem:hover h1 {
+  background-image: linear-gradient(180deg, #ffffff 55%, #fceb02 55%);
+}
+.slideItem:hover .slideContent h1 span {
+  color: #fceb02;
+  transition: 0.5s;
+}
 .slideContent p {
   opacity: 0;
-  font-size: 1rem;
-  line-height: 1.12;
+  font-size: 1.1rem;
+  line-height: 1.2;
   font-weight: 400;
 }
 .slideItem:hover .slideContent p {
@@ -79,10 +85,7 @@
 }
 
 .slideContent p span {
-  color: #fceb02;
-  font-size: 1.1rem;
-}
-.slideItem:hover .slideContent h1 span {
-  color: #fceb02;
-  transition: 0.5s;
+  color: #fcf7b5;
+  font-size: 1.2rem;
+  font-weight: 700;
 }

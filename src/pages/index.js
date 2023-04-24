@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Slide from '@/components/Slide';
 
 import styles from '@/styles/Home.module.css';
+import ProductsPainel from '@/components/products/ProductsPainel';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Slide />
+        <ProductsPainel title={'Produtos'} />
       </main>
     </>
   );

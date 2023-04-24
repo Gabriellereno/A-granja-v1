@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '@/styles/components/layout/navbar.module.css';
 import Link from 'next/link';
+import { GlobalContext } from '../context/GlobalContext';
 
 const menuItens = [
   {
@@ -27,13 +28,10 @@ const menuItens = [
     titulo: 'Casa e Jardim',
     url: '#',
   },
-  {
-    titulo: 'Veterinário',
-    url: '#',
-  },
 ];
 
 const Navbar = () => {
+  const { message } = React.useContext(GlobalContext);
   const [menu, setMenu] = React.useState(false);
   //fechar menu ao redimensionar
   React.useEffect(() => {
@@ -108,6 +106,15 @@ const Navbar = () => {
         <div className={styles.underMenu}>
           <p>Av. Azenha, 991 - Porto Alegre, RS</p>
         </div>
+      </div>
+      <div>
+        <a
+          className={styles.whatsappA}
+          href={`https://wa.me/5551993225320?text=${message}`}
+          target="_blank"
+        >
+          <i className="fa fa-whatsapp"></i>
+        </a>
       </div>
     </>
   );
