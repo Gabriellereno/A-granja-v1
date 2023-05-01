@@ -1,10 +1,18 @@
 import Head from 'next/head';
 import Slide from '@/components/Slide';
-
 import styles from '@/styles/Home.module.css';
 import ProductsPainel from '@/components/products/ProductsPainel';
+import { GlobalContext } from '@/components/context/GlobalContext';
+import { CartContext } from '@/components/context/CartContext';
+
+import React from 'react';
 
 export default function Home() {
+  const { homeProducts } = React.useContext(GlobalContext);
+  const { homeFilter } = React.useContext(GlobalContext);
+  const { setHomeFilter } = React.useContext(GlobalContext);
+  const { cartProducts } = React.useContext(CartContext);
+
   return (
     <>
       <Head>
@@ -15,7 +23,13 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Slide />
-        <ProductsPainel title={'Produtos'} />
+        <ProductsPainel
+          title={'Produtos'}
+          produtosContext={homeProducts}
+          filter={homeFilter}
+          setFilter={setHomeFilter}
+          cartProducts={cartProducts}
+        />
       </main>
     </>
   );

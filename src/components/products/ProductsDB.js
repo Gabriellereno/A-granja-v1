@@ -1,6 +1,6 @@
 export const ProductsDB = {
   cachorros: {
-    ração: [
+    Ração: [
       {
         name: 'Ração Premier Fórmula para Cães Sênior de Porte Grande e Gigante Sabor Frango 15kg',
         id: '180070',
@@ -5104,13 +5104,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1630595268626_mini.jpg',
       },
-      {
-        name: 'Ração Frost Sensitive Skin para Cães Adultos de Pele Sensível',
-        id: '168438',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1628623598777_mini.jpg',
-      },
+
       {
         name: 'Ração Frost Sensitive Skin para Cães Adultos de Pele Sensível',
         id: '150636',
@@ -5118,13 +5112,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1630595268626_mini.jpg',
       },
-      {
-        name: 'Ração Frost Sensitive Skin para Cães Adultos de Pele Sensível',
-        id: '150636',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1628623598777_mini.jpg',
-      },
+
       {
         name: 'Ração Frost Light para Cães Adultos Obesos',
         id: '168440',
@@ -5139,13 +5127,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1630592498009_mini.jpg',
       },
-      {
-        name: 'Ração Frost SB para Cães Adultos de Porte Mini e Pequeno',
-        id: '168437',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1628621497705_mini.jpg',
-      },
+
       {
         name: 'Ração Frost LB para Cães Filhotes de Porte Médio e Grande',
         id: '168435',
@@ -5160,13 +5142,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1628622891130_mini.jpg',
       },
-      {
-        name: 'Ração Frost SB para Cães Filhotes de Porte Mini e Pequeno',
-        id: '150627',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1630594342853_mini.jpg',
-      },
+
       {
         name: 'Ração Frost SB para Cães Filhotes de Porte Mini e Pequeno',
         id: '168434',
@@ -5174,13 +5150,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1628622891130_mini.jpg',
       },
-      {
-        name: 'Ração Frost SB para Cães Filhotes de Porte Mini e Pequeno',
-        id: '168434',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1630594342853_mini.jpg',
-      },
+
       {
         name: 'Ração Frost SB para Cães Adultos de Porte Mini e Pequeno',
         id: '150632',
@@ -5188,13 +5158,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1630592498009_mini.jpg',
       },
-      {
-        name: 'Ração Frost SB para Cães Adultos de Porte Mini e Pequeno',
-        id: '150632',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1628621497705_mini.jpg',
-      },
+
       {
         name: 'Ração Úmida Baw Waw Patê de Frango para Cães Adultos 280g',
         id: '171433',
@@ -5251,13 +5215,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1654283681801_mini.jpg',
       },
-      {
-        name: 'Ração Úmida Livelong Frango com Batata-Doce para Cães 300g',
-        id: '177338',
-        category: 'Ração Úmida',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1654284487334_mini.jpg',
-      },
+
       {
         name: 'Ração Úmida Livelong Peixe com Batata-Doce para Cães 300g',
         id: '177339',
@@ -5811,13 +5769,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1678216438234_mini.jpg',
       },
-      {
-        name: 'Ração Origens para Cães Adultos de Porte Mini e Pequeno Sabor Carne e Cereais',
-        id: '181623',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1677532359957_mini.jpg',
-      },
+
       {
         name: 'Ração Origens para Cães Adultos de Porte Mini e Pequeno Sabor Carne e Cereais',
         id: '181554',
@@ -5825,13 +5777,7 @@ export const ProductsDB = {
         amount: 0,
         img: 'https://images.petz.com.br/fotos/1678216438234_mini.jpg',
       },
-      {
-        name: 'Ração Origens para Cães Adultos de Porte Mini e Pequeno Sabor Carne e Cereais',
-        id: '181554',
-        category: 'Ração Seca',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1677532359957_mini.jpg',
-      },
+
       {
         name: 'Ração Pro Plan Exigent para Cães Adultos de Raças Pequenas Sabor Frango e Arroz - 1kg',
         id: '72319',
@@ -6330,13 +6276,6 @@ export const ProductsDB = {
         img: 'https://images.petz.com.br/fotos/1654283681801_mini.jpg',
       },
       {
-        name: 'Ração Úmida Livelong Frango com Batata-Doce para Cães 300g',
-        id: '177340',
-        category: 'Ração Úmida',
-        amount: 0,
-        img: 'https://images.petz.com.br/fotos/1654284487334_mini.jpg',
-      },
-      {
         name: 'Ração para Cães Atacama Adulto Todas as Raças Sabor Carne e Frango',
         id: '150624',
         category: 'Ração Seca',
@@ -6736,7 +6675,7 @@ export const ProductsDB = {
         img: 'https://images.petz.com.br/fotos/1640699760637_mini.jpg',
       },
     ],
-    petiscosEOssos: [
+    PetiscosEOssos: [
       {
         name: 'Snack Petz Mini Bifinho Carne para Cães Adultos - 500g',
         id: '164555',
@@ -13284,10 +13223,26 @@ export const ProductsDB = {
     GradesEEscadas,
     Roupas, */
   },
-  /* gatos: 'Product 1',
-  pássaros: 'Product 1',
+  gatos: {
+    Ração: [],
+    PetiscosEOssos: [],
+    TapetesFraldasEBanheiros: [],
+    Farmácia: [],
+    Brinquedos: [],
+    Coleiras: [],
+    GuiasEPeitorais: [],
+    BelezaELimpeza: [],
+    CamasECobertores: [],
+    CasasETocas: [],
+    AcessóriosDeAlimentação: [],
+    AcessóriosDeTransporte: [],
+    Portões: [],
+    GradesEEscadas: [],
+    Roupas: [],
+  },
+  // pássaros: 'Product 1',
 
-  peixes: 'Product 1',
-  outrosPets: 'Product 1',
-  casaEJardim: 'Product 1', */
+  // peixes: 'Product 1',
+  // outrosPets: 'Product 1',
+  // casaEJardim: 'Product 1',
 };
