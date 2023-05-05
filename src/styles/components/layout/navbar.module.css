@@ -134,9 +134,23 @@
 }
 .searchInput label {
   display: flex;
-  align-items: center;
   border: none;
+  gap: 10px;
   background-color: transparent;
+}
+.searchInput label input {
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #8ada87;
+  border-radius: 50%;
+  width: 21px;
+  padding-top: 4px;
+  font-family: 'Josefin Sans', sans-serif;
+  cursor: pointer;
+}
+.searchInput label input:hover {
+  filter: drop-shadow(0px 0px 2px #919191);
 }
 
 .cart {
@@ -156,7 +170,7 @@
 }
 
 .cart input {
-  width: 15px;
+  width: 18px;
   height: 15px;
   text-align: center;
   color: #0e8321;

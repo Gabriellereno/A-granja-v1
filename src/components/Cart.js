@@ -8,8 +8,10 @@ const Cart = ({ setCart, cart }) => {
   const { cartProducts } = React.useContext(CartContext);
 
   const [toRight, setToRight] = React.useState(false);
+  const [name, setName] = React.useState('');
   const [deliveryOption, setDeliveryOption] = React.useState('Retirar');
-  const [adress, setAdress] = React.useState();
+  const [address, setAddress] = React.useState('');
+  const [payment, setPayment] = React.useState('Dinheiro');
 
   const handleAnimateCartExit = () => {
     if (cart && !toRight) {
@@ -20,15 +22,54 @@ const Cart = ({ setCart, cart }) => {
       }, 300);
     } else return null;
   };
-
-  function handleDeliveryOptionChange(event) {
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+  const handleDeliveryOptionChange = (event) => {
     setDeliveryOption(event.target.value);
-  }
+  };
 
-  function handleAdressChange(event) {
-    setAdress(event.target.value);
-  }
+  const handleAddressChange = (event) => {
+    setAddress(event.target.value);
+  };
+  const handlePaymentChange = (event) => {
+    setPayment(event.target.value);
+  };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const regex = /^[a-zA-Z]+\s.*[0-9]+.*$/;
+    if (name === '' || name.length <= 3) {
+      alert('Por favor, insira seu nome corretamente.');
+    } else if (
+      (deliveryOption === 'TeleEntrega' && address === '') ||
+      (deliveryOption === 'TeleEntrega' && !regex.test(address))
+    ) {
+      alert('Por favor, insira seu endereço corretamente.');
+    } else {
+      alert(
+        'A loja terminará de lhe atender pelo WhatsApp, se estiver pelo computador selecione: Iniciar conversa, Após isso selecione: Usar o WhatsApp Web (caso não tenha instalado no seu computador).',
+      );
+      const formattedItens = cartProducts
+        .map((product, index) => {
+          const itemIndex = `${(index + 1).toString().padStart(2, '0')}`;
+          return `${itemIndex} - ${product.name}, Qnt: ${product.amount} unid.`;
+        })
+        .join('%0a');
+
+      const formattedName = `Cliente: ${name}`;
+      const formattedDelivery = `Tipo de entrega: ${deliveryOption}`;
+      const formattedAdress =
+        deliveryOption === 'TeleEntrega'
+          ? `Endereço de entrega: ${address}`
+          : '';
+      const formattedPayment = `Pagamento em: ${payment}`;
+
+      const result = `${formattedName}%0a${formattedDelivery}%0a${formattedAdress}%0a${formattedPayment}%0a%0a${formattedItens}%0a`;
+
+      window.open(`https://wa.me/5551993225320?text=${result}`);
+    }
+  };
   return (
     <div className={toRight ? styles.toRight : styles.cartBg}>
       <div className={styles.cartContainer}>
@@ -45,7 +86,7 @@ const Cart = ({ setCart, cart }) => {
             cartProducts.map((product) => (
               <div key={product.id} className={styles.cartProduct}>
                 <img src={product.img} />
-                <p>{product.name.split(' ').slice(0, 3).join(' ')}</p>
+                <p>{product.name.split(' ').slice(0, 6).join(' ')}</p>
                 <div className={styles.quantity}>
                   <input
                     type="button"
@@ -64,12 +105,21 @@ const Cart = ({ setCart, cart }) => {
             ))}
         </div>
       </div>
-      <div className={styles.cartFinalizar}>
+      <form className={styles.cartFinalizar} onSubmit={handleSubmit}>
         <div className={styles.cartInfoClient}>
           <div className={styles.cartInfoClientTitle}>
             <h2>Informações da entrega</h2>
           </div>
           <div className={styles.cartInfoClientInputs}>
+            <label className={styles.labelText}>
+              Nome:
+              <input
+                type="text"
+                value={name}
+                placeholder="Ex: Maria"
+                onChange={handleNameChange}
+              />{' '}
+            </label>
             <label>
               <input
                 type="radio"
@@ -94,12 +144,12 @@ const Cart = ({ setCart, cart }) => {
             </label>
             {deliveryOption === 'TeleEntrega' && (
               <div>
-                <label>
+                <label className={styles.labelText}>
                   Endereço:
                   <input
                     type="text"
-                    value={adress}
-                    onChange={handleAdressChange}
+                    value={address}
+                    onChange={handleAddressChange}
                     placeholder="Ex: Av Azenha, 991 bl 7 apto 100, Azenha, POA"
                   />
                 </label>
@@ -113,11 +163,20 @@ const Cart = ({ setCart, cart }) => {
                 name="pagamento"
                 id="pagamento"
                 value="Dinheiro"
+                onChange={handlePaymentChange}
+                checked={payment === 'Dinheiro'}
               />{' '}
               Dinheiro
             </label>
             <label>
-              <input type="radio" name="pagamento" id="pagamento" value="Pix" />{' '}
+              <input
+                type="radio"
+                name="pagamento"
+                id="pagamento"
+                value="Pix"
+                onChange={handlePaymentChange}
+                checked={payment === 'Pix'}
+              />{' '}
               Pix
             </label>
             <label>
@@ -126,17 +185,19 @@ const Cart = ({ setCart, cart }) => {
                 name="pagamento"
                 id="pagamento"
                 value="Cartão"
+                onChange={handlePaymentChange}
+                checked={payment === 'Cartão'}
               />{' '}
               Cartão de crédito
             </label>
           </div>
         </div>
         <input
-          type="button"
+          type="submit"
           value="Enviar pedido"
           className={styles.cartPurchase}
         />
-      </div>
+      </form>
     </div>
   );
 };

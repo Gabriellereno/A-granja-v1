@@ -9,40 +9,42 @@ import Cart from '../Cart';
 const menuItens = [
   {
     titulo: 'Cachorros',
-    url: '#',
+    url: `/category/cachorros`,
   },
   {
     titulo: 'Gatos',
-    url: '#',
+    url: '/category/gatos',
   },
   {
     titulo: 'Pássaros',
-    url: '#',
+    url: '/category/pássaros',
   },
   {
     titulo: 'Peixes',
-    url: '#',
+    url: '/category/peixes',
   },
   {
     titulo: 'Outros Pets',
-    url: '#',
+    url: '/category/outrosPets',
   },
   {
     titulo: 'Casa e Jardim',
-    url: '#',
+    url: '/category/casaEJardim',
   },
 ];
 
 const Navbar = () => {
-  const { homeProducts } = React.useContext(GlobalContext);
+  const { allProducts } = React.useContext(GlobalContext);
   const { message } = React.useContext(GlobalContext);
-  const { cartAmount } = React.useContext(CartContext);
+  const { cartAmount, addProductToCart } = React.useContext(CartContext);
   const [menu, setMenu] = React.useState(false);
   const [cart, setCart] = React.useState(false);
-
+  const componentRef = React.useRef(null);
   const [filteredProducts, setFilteredProducts] = React.useState([]);
-  const [showProducts, setShowProducts] = React.useState(false);
+  const [show20Products, setShow20Products] = React.useState(false);
   const [next, setNext] = React.useState(20);
+  const [searchText, setSearchText] = React.useState('');
+  const [clearSearch, setClearSearch] = React.useState(false);
   //fechar menu ao redimensionar
   React.useEffect(() => {
     window.addEventListener('resize', () => {
@@ -58,27 +60,47 @@ const Navbar = () => {
   //busca
   const handleSearch = (e) => {
     e.preventDefault();
-
     let lowerCase = e.target.value.toLowerCase().split(' ');
+    setSearchText(e.target.value);
 
-    const filtered = homeProducts.filter((produto) => {
-      return lowerCase.every((word) =>
-        produto.name.toLowerCase().includes(word),
-      );
+    const filtered = allProducts.filter((produto) => {
+      if (produto.name) {
+        return lowerCase.every((word) =>
+          produto.name.toLowerCase().includes(word),
+        );
+      }
     });
     if (e.target.value.length > 0) {
-      setFilteredProducts(filtered);
+      setFilteredProducts(filtered.sort((a, b) => (a.name > b.name ? 1 : -1)));
+      setClearSearch(true);
     } else {
       setFilteredProducts([]);
-      setShowProducts(false);
+      setShow20Products(false);
+      setClearSearch(false);
     }
   };
-  //carregar mais produtos na busca
+  //show20Products recebe 20 produtos por vez de filteredProducts, next inicia como 20 e incrementa de 20 em 20 para o slice
   React.useEffect(() => {
     if (filteredProducts) {
-      setShowProducts(filteredProducts.slice(0, next));
+      setShow20Products(filteredProducts.slice(0, next));
     }
   }, [filteredProducts, next]);
+
+  //fechar caixa de resultados de pesquisaao clicar fora
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        componentRef.current &&
+        !componentRef.current.contains(event.target)
+      ) {
+        setShow20Products([]);
+      }
+    };
+    window.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -123,10 +145,22 @@ const Navbar = () => {
                   type="text"
                   placeholder="Pesquise na Granja"
                   id="search"
+                  value={searchText}
                   onChange={(e) => handleSearch(e)}
+                  onClick={(e) => handleSearch(e)}
                 />
 
                 <label htmlFor="search" type="submit">
+                  {clearSearch && (
+                    <input
+                      type="button"
+                      value="X"
+                      onClick={() => {
+                        setSearchText(''), setClearSearch(false), setNext(20);
+                      }}
+                    />
+                  )}
+
                   <img src="/lupa.svg" alt="Lupa" />
                 </label>
               </div>
@@ -153,16 +187,18 @@ const Navbar = () => {
         </a>
       </div>
       {cart && <Cart setCart={setCart} cart={cart} />}
-      {filteredProducts.length > 0 && (
-        <div className={styles.filteredBg}>
+      {show20Products.length > 0 && (
+        <div ref={componentRef} className={styles.filteredBg}>
           <div className={styles.filteredContainer}>
             <div className={styles.filteredProducts}>
-              {showProducts.map((produto) => (
+              {show20Products.map((produto) => (
                 <div key={produto.id} className={styles.filteredProduct}>
                   <img src={produto.img} alt={produto.name} />
                   <p>{produto.name}</p>
                   <div className={styles.addCart}>
-                    <button>Adicionar</button>
+                    <button onClick={() => addProductToCart(produto)}>
+                      Adicionar
+                    </button>
                   </div>
                 </div>
               ))}
