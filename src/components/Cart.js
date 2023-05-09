@@ -12,7 +12,7 @@ const Cart = ({ setCart, cart }) => {
   const [deliveryOption, setDeliveryOption] = React.useState('Retirar');
   const [address, setAddress] = React.useState('');
   const [payment, setPayment] = React.useState('Dinheiro');
-
+  //Animação de saída do componente Cart, ao click ele troca a className para uma animação right e após o timeout seta o cart como false bem como remove a className right.
   const handleAnimateCartExit = () => {
     if (cart && !toRight) {
       setToRight(true);

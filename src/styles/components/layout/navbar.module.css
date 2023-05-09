@@ -1,3 +1,13 @@
+.beforeFixedMenu {
+  width: 100%;
+  height: 150px;
+}
+.comport {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
 .background {
   position: relative;
   width: 100%;
@@ -41,6 +51,7 @@
     rgb(252, 199, 54) 100%
   );
   filter: drop-shadow(0px 5px 4px #00000060);
+  z-index: 10;
 }
 .underMenu {
   height: 100%;
@@ -50,6 +61,14 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 10px;
+  gap: 15px;
+}
+.underMenu a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0d8d42;
+  font-size: 0.9rem;
+  cursor: pointer;
 }
 .underMenu p {
   font-weight: 600;
@@ -278,6 +297,20 @@
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1rem;
   cursor: pointer;
+}
+.filteredContainer .next {
+  padding: 40px;
+}
+.next input {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 4px #acacac);
+  background-color: #8ada87;
+  color: #fff;
 }
 @media (max-width: 1150px) {
   .navbar {

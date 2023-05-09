@@ -3,11 +3,12 @@
   height: 275px;
   padding: 20px 0px;
   overflow: hidden;
+  display: flex;
 }
 
 .slide {
   max-width: 1250px;
-  margin: 0 auto;
+  margin: auto auto;
   display: flex;
   justify-content: center;
   gap: 1rem;
