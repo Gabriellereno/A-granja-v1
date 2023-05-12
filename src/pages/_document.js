@@ -4,6 +4,10 @@ export default function Document() {
   return (
     <Html lang="pt-br">
       <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        />
         <link rel="icon" href="/logo.jpeg" />
         <link
           rel="stylesheet"

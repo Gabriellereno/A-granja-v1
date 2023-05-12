@@ -1,28 +1,30 @@
 .slideBg {
   width: 100%;
   height: 275px;
-  padding: 20px 0px;
   overflow: hidden;
   display: flex;
 }
 
 .slide {
-  max-width: 1250px;
-  margin: auto auto;
+  max-width: 1340px;
+  height: 275px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  gap: 15px;
+  padding: 0 10px;
 }
 .slideItem {
+  border: #fff 1px solid;
   border-radius: 8px;
-  border: #f7f3ba 3px outset;
   height: 230px;
   flex: 1;
   transition: 0.4s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(5px 5px 5px #0000004d);
+  filter: drop-shadow(4px 4px 2px #0000004d);
   color: #fff;
 }
 .slide .slideItem:nth-of-type(2) {
@@ -47,6 +49,7 @@
 }
 .slideItem:hover {
   flex: 2;
+  height: 275px;
 }
 .slideItem:hover .slideContent {
   background-color: #0000007c;
@@ -55,12 +58,12 @@
 
 .slideContent {
   padding: 20px;
-  border-radius: 4px;
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 .slideContent h1 {
   background-image: linear-gradient(180deg, #ffffff 100%, #fceb02 100%);
@@ -86,7 +89,68 @@
 }
 
 .slideContent p span {
-  color: #fcf7b5;
-  font-size: 1.2rem;
+  color: #fceb02;
+  font-size: 1.25rem;
   font-weight: 700;
+}
+@media (max-width: 900px) {
+  .slideBg {
+    height: 250px;
+  }
+  .slide {
+    height: 250px;
+    gap: 10px;
+  }
+  .slideItem {
+    height: 200px;
+  }
+  .slideItem:hover {
+    flex: 2;
+    height: 250px;
+  }
+  .slideContent p {
+    opacity: 0;
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  .slideContent p span {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 750px) {
+  .slideBg {
+    overflow-x: auto;
+  }
+  .slide {
+    min-width: 750px;
+  }
+}
+@media (max-width: 400px) {
+  .slideBg {
+    height: 200px;
+  }
+  .slide {
+    height: 200px;
+    gap: 15px;
+  }
+  .slideItem {
+    height: 160px;
+  }
+  .slideItem:hover {
+    flex: 2;
+    height: 200px;
+  }
+  .slideContent h1 {
+    font-size: 1.25rem;
+  }
+  .slideContent p {
+    opacity: 0;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+  .slideContent p span {
+    font-size: 0.9rem;
+  }
 }

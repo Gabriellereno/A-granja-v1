@@ -67,7 +67,7 @@ const Cart = ({ setCart, cart }) => {
 
       const result = `${formattedName}%0a${formattedDelivery}%0a${formattedAdress}%0a${formattedPayment}%0a%0a${formattedItens}%0a`;
 
-      window.open(`https://wa.me/5551993225320?text=${result}`);
+      window.open(`https://wa.me/5551994217207?text=${result}`);
     }
   };
   return (

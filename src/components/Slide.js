@@ -26,10 +26,10 @@ const Slide = () => {
             <p>A partir de:</p>
             <div>
               <p>
-                <span>R$ 30</span> em compras. (5km de nossa loja)
+                <span>R$ 30</span> em compras. (Até 5km)
               </p>
               <p>
-                <span>R$ 50</span> em compras. (5km a 10km de nossa loja)
+                <span>R$ 50</span> em compras. (Até 10km)
               </p>
             </div>
           </div>

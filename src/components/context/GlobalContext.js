@@ -23,8 +23,9 @@ export const GlobalStorage = ({ children }) => {
       const products = Object.values(ProductsDB).flatMap((item) => {
         if (item[homeFilter]) {
           return item[homeFilter];
-        }
+        } else return [];
       });
+      console.log(products);
       setHomeProducts(products);
     }
   }, [homeFilter, categoryFilter]);

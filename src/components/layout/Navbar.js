@@ -177,14 +177,26 @@ const Navbar = () => {
         <div className={styles.underBg}>
           <div className={styles.underMenu}>
             <a href="tel:5132196041">(51) 3219-6041</a>
-            <a href="tel:51995946108">(51) 9 9594-6108</a>
+            <div className={styles.underMenuWhatsContainer}>
+              <div>
+                <a
+                  className={styles.underMenuWhatsappA}
+                  href={`https://wa.me/5551994217207?text=Olá`}
+                  target="_blank"
+                >
+                  <i className="fa fa-whatsapp"></i>
+                </a>
+              </div>
+              <a href="tel:51994217207">(51) 9 9421-7207</a>
+            </div>
+
             <p>Av. Azenha, 991 - Porto Alegre, RS</p>
           </div>
         </div>
         <div>
           <a
             className={styles.whatsappA}
-            href={`https://wa.me/5551993225320?text=${message}`}
+            href={`https://wa.me/5551994217207?text=Olá`}
             target="_blank"
           >
             <i className="fa fa-whatsapp"></i>

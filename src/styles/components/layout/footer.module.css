@@ -1,0 +1,151 @@
+.footerBg {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(247, 247, 247);
+  display: flex;
+  flex-direction: column;
+}
+.footerContainer {
+  display: flex;
+  width: 1200px;
+  height: 350px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 10px;
+}
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  height: 250px;
+  gap: 25px;
+}
+.socialMediaAndPayments {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-self: flex-start;
+}
+.socialMediaAndPayments h3 {
+  color: #0d8d42;
+}
+.socialMediaAndPayments .icons {
+  display: flex;
+  gap: 10px;
+  height: 20px;
+  align-items: center;
+}
+.icons i {
+  color: #d4b606;
+  font-size: 1.5rem;
+}
+.assessments {
+  display: flex;
+  flex-direction: column;
+}
+.assessments h3 {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: #0d8d42;
+}
+.assessment {
+  padding: 10px;
+}
+.assessment:hover {
+  background-color: #ececec;
+  border-radius: 4px;
+  transition: 0.2s ease;
+}
+.assessment a {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #0d8d42;
+  text-decoration: none;
+}
+.assessment a span {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #d4b606;
+}
+.assessment span h4 {
+  font-size: 0.9rem;
+  color: #0d8d42;
+}
+.assessment a p {
+  font-size: 0.8rem;
+}
+.lastLine {
+  width: 100%;
+  height: 150px;
+  background-color: #8ada87;
+}
+.lastLineContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.lastLineContainer p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+@media (max-width: 1120px) {
+  .footerContainer {
+    width: 900px;
+  }
+}
+@media (max-width: 880px) {
+  .footerContainer {
+    width: 700px;
+  }
+
+  .footerContent iframe {
+    width: 200px;
+    height: 200px;
+  }
+  .lastLineContainer {
+    padding: 0 20px;
+  }
+  .lastLineContainer p {
+    text-align: center;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+}
+@media (max-width: 690px) {
+  .footerBg {
+    height: min-content;
+  }
+  .footerContainer {
+    flex-direction: column-reverse;
+    width: fit-content;
+    height: min-content;
+    gap: 0px;
+    align-items: start;
+  }
+
+  .footerContent {
+    height: fit-content;
+    padding: 20px 0px;
+  }
+  .footerContent iframe {
+    width: calc(100vw - 20px);
+    height: 250px;
+    padding-left: 10px;
+  }
+  .socialMediaAndPayments {
+    padding-left: 10px;
+  }
+  .footerContainer:nth-child(1) {
+    margin-bottom: 20px;
+  }
+}

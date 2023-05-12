@@ -30,9 +30,9 @@ const Category = () => {
   const title =
     pet === 'outrosPets'
       ? 'Outros Pets'
-      : pet === 'cachorro'
+      : pet === 'cachorros'
       ? 'Cachorros'
-      : pet === 'gato'
+      : pet === 'gatos'
       ? 'Gatos'
       : pet === 'peixes'
       ? 'Peixes'

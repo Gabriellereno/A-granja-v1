@@ -125,6 +125,30 @@ const ProductsPainel = ({
                   />
                   Tapetes, Fraldas e mais
                 </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="homeFilter"
+                    value="Tapetes, Fraldas e mais"
+                    checked={filter === 'Farmácia'}
+                    onChange={() => {
+                      setFilter('Farmácia'), setNext(20);
+                    }}
+                  />
+                  Farmácia
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="homeFilter"
+                    value="Tapetes, Fraldas e mais"
+                    checked={filter === 'Alimentação'}
+                    onChange={() => {
+                      setFilter('Alimentação'), setNext(20);
+                    }}
+                  />
+                  Alimentação
+                </label>
               </>
             )}
           </div>

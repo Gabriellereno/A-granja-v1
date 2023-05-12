@@ -34,7 +34,7 @@ export default function Home() {
       <main className={styles.main}>
         <Slide />
         <ProductsPainel
-          title={'Produtos mais pesquisados'}
+          title={'Mais pesquisados'}
           produtosContext={homeProducts}
           filter={homeFilter}
           setFilter={setHomeFilter}
