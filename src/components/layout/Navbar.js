@@ -109,12 +109,26 @@ const Navbar = () => {
         <div className={styles.background}>
           <div className={styles.navbar}>
             <Link href="/">
-              <img
-                src="/logo.jpeg"
-                alt="A granja"
-                width="130px"
-                className={styles.logo}
-              />
+              <div className={styles.flipContainer}>
+                <div className={styles.flipper}>
+                  <div className={styles.front}>
+                    <img
+                      src="/deluka.jpg"
+                      alt="A granja"
+                      width="130px"
+                      className={`${styles.logo}  ${styles.logo1}`}
+                    />
+                  </div>
+                  <div className={styles.back}>
+                    <img
+                      src="/logo.jpeg"
+                      alt="A granja"
+                      width="130px"
+                      className={`${styles.logo}  ${styles.logo2}`}
+                    />
+                  </div>
+                </div>
+              </div>
             </Link>
 
             <div className={styles.menu}>

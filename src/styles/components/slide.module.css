@@ -49,7 +49,6 @@
 }
 .slideItem:hover {
   flex: 2;
-  height: 275px;
 }
 .slideItem:hover .slideContent {
   background-color: #0000007c;

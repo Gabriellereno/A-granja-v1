@@ -157,7 +157,7 @@ const ProductsPainel = ({
         <div>
           <div className={styles.back}></div>
           <div className={styles.products}>
-            {produtos &&
+            {produtos ? (
               produtos.map((produto, index) => (
                 <div key={index} className={styles.produtoBg}>
                   <div className={styles.produto}>
@@ -202,7 +202,31 @@ const ProductsPainel = ({
                     </button>
                   </div>
                 </div>
-              ))}
+              ))
+            ) : (
+              <>
+                <div className={styles.produtoBg}>oi</div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+                <div className={styles.produtoBg}></div>
+              </>
+            )}
           </div>
           <div className={styles.next}>
             {produtosContext

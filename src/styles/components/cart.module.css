@@ -154,9 +154,16 @@
 }
 .cartInfoClient {
   padding: 40px 40px;
+  padding-bottom: 70px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.cartInfoClient::-webkit-scrollbar {
+  display: none; /* Chrome and Safari */
 }
 .cartInfoClientTitle h2 {
   color: #0d8d42;
@@ -256,6 +263,7 @@
   }
   .cartInfoClient {
     padding: 20px 30px;
+    padding-bottom: 70px;
   }
   .cartInfoClientTitle h2 {
     margin-bottom: 5px;
@@ -269,7 +277,7 @@
     min-height: 60px;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 900px), (max-height: 600px) {
   .cartContainer {
     padding: 30px;
     padding-bottom: 0;
@@ -297,6 +305,7 @@
   }
   .cartInfoClient {
     margin-bottom: 5px;
+    padding-bottom: 60px;
   }
   .cartInfoClientTitle h2 {
     margin-bottom: 5px;
