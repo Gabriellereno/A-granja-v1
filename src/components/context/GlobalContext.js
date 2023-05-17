@@ -25,7 +25,7 @@ export const GlobalStorage = ({ children }) => {
           return item[homeFilter];
         } else return [];
       });
-      console.log(products);
+
       setHomeProducts(products);
     }
   }, [homeFilter, categoryFilter]);

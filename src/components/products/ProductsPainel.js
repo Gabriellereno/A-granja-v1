@@ -16,6 +16,7 @@ const ProductsPainel = ({
   const { removeProductFromCart } = React.useContext(CartContext);
   const [produtos, setProdutos] = React.useState([]);
   const [next, setNext] = React.useState(20);
+  const [loadedProducts, setLoadedProducts] = React.useState(false);
 
   const labels = {
     Ração: 'Ração',
@@ -61,6 +62,7 @@ const ProductsPainel = ({
   React.useEffect(() => {
     if (produtosContext) {
       setProdutos(produtosContext.slice(0, next));
+      setLoadedProducts(true);
     }
   }, [produtosContext, next]);
 
@@ -157,76 +159,59 @@ const ProductsPainel = ({
         <div>
           <div className={styles.back}></div>
           <div className={styles.products}>
-            {produtos ? (
-              produtos.map((produto, index) => (
-                <div key={index} className={styles.produtoBg}>
-                  <div className={styles.produto}>
-                    <img src={produto.img} alt={produto.name} />
-                    <p>{produto.name}</p>
+            {produtos && loadedProducts
+              ? produtos.map((produto, index) => (
+                  <div key={index} className={styles.produtoBg}>
+                    <div className={styles.produto}>
+                      <img src={produto.img} alt={produto.name} />
+                      <p>{produto.name}</p>
 
-                    <div className={styles.quantity}>
-                      <input
-                        type="button"
-                        value="-"
-                        onClick={() => removeProductFromCart(produto)}
-                        disabled={
-                          !cartProducts.some((item) => item.id === produto.id)
-                        }
-                      />
-                      {cartProducts.some((item) => item.id === produto.id) ? (
+                      <div className={styles.quantity}>
                         <input
-                          type="text"
-                          value={
-                            cartProducts.find((item) => item.id === produto.id)
-                              .amount
+                          type="button"
+                          value="-"
+                          onClick={() => removeProductFromCart(produto)}
+                          disabled={
+                            !cartProducts.some((item) => item.id === produto.id)
                           }
-                          readOnly
                         />
-                      ) : (
-                        <input type="text" value={0} readOnly />
-                      )}
+                        {cartProducts.some((item) => item.id === produto.id) ? (
+                          <input
+                            type="text"
+                            value={
+                              cartProducts.find(
+                                (item) => item.id === produto.id,
+                              ).amount
+                            }
+                            readOnly
+                          />
+                        ) : (
+                          <input type="text" value={0} readOnly />
+                        )}
 
-                      <input
-                        type="button"
-                        value="+"
-                        onClick={() => addProductToCart(produto)}
-                      />
+                        <input
+                          type="button"
+                          value="+"
+                          onClick={() => addProductToCart(produto)}
+                        />
+                      </div>
+                    </div>
+
+                    <div className={styles.addCart}>
+                      <button onClick={() => addProductToCart(produto)}>
+                        {' '}
+                        Adicionar
+                        <img alt="bag" src="/bag.svg" />
+                      </button>
                     </div>
                   </div>
-
-                  <div className={styles.addCart}>
-                    <button onClick={() => addProductToCart(produto)}>
-                      {' '}
-                      Adicionar
-                      <img alt="bag" src="/bag.svg" />
-                    </button>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <>
-                <div className={styles.produtoBg}>oi</div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-                <div className={styles.produtoBg}></div>
-              </>
-            )}
+                ))
+              : Array.from({ length: 20 }, (_, index) => (
+                  <div
+                    key={index}
+                    className={`${styles.produtoBg} ${styles.simulatedProduct}`}
+                  ></div>
+                ))}
           </div>
           <div className={styles.next}>
             {produtosContext
