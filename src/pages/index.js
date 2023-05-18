@@ -26,9 +26,9 @@ export default function Home() {
   }, []);
   return (
     <>
+      {' '}
       <Head>
-        <title>A Granja</title>
-        <meta name="description" content="A marca preferida do seu pet" />
+        <title>Granja D'Lucca - A loja do seu pet</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>

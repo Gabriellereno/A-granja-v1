@@ -5,6 +5,7 @@ import ProductsPainel from '@/components/products/ProductsPainel';
 import { GlobalContext } from '@/components/context/GlobalContext';
 import { CartContext } from '@/components/context/CartContext';
 import { ProductsDB } from '@/components/products/ProductsDB';
+import Head from 'next/head';
 
 const Category = () => {
   const {
@@ -43,6 +44,10 @@ const Category = () => {
       : 'Outros';
   return (
     <div>
+      <Head>
+        <title>Granja D'Lucca - {title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <main className={styles.main}>
         <ProductsPainel
           title={title}
