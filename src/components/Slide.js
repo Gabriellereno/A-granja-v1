@@ -8,11 +8,11 @@ const Slide = () => {
         <div className={styles.slideItem}>
           <div className={styles.slideContent}>
             <h1>
-              <span>50</span> Anos
+              <span>Desde</span> 1979
             </h1>
             <p>
-              "Com 50 anos de dedicação e cuidado com os pets, nossa empresa tem
-              a <span>experiência</span> e o <span>comprometimento</span>{' '}
+              "Com anos de dedicação e cuidado com os pets, nossa empresa tem a{' '}
+              <span>experiência</span> e o <span>comprometimento</span>{' '}
               necessários para garantir a saúde e o bem-estar dos seus animais
               de estimação."
             </p>
@@ -40,7 +40,7 @@ const Slide = () => {
               <span>Veterinário</span>
             </h1>
             <p>
-              Consulte com nossos veterinários a qualquer hora! Temos o{' '}
+              Consulte com nossos veterinários! Agende pelo WhatsApp. Temos o{' '}
               <span>melhor preço</span> da região.
             </p>
           </div>
@@ -53,6 +53,9 @@ const Slide = () => {
             <p>
               Peça pelo site e ganhe <span>5%</span> de desconto em qualquer
               compra!
+              <br />
+              Coloque os produtos no carrinho e envie o pedido, finalizaremos
+              seu atendimento pelo WhatsApp.
             </p>
           </div>
         </div>

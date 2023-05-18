@@ -192,11 +192,21 @@ const Cart = ({ setCart, cart }) => {
             </label>
           </div>
         </div>
-        <input
-          type="submit"
-          value="Enviar pedido"
-          className={styles.cartPurchase}
-        />
+        {cartProducts.length > 0 ? (
+          <input
+            type="submit"
+            value="Enviar pedido"
+            className={styles.cartPurchase}
+          />
+        ) : (
+          <input
+            style={{ cursor: 'not-allowed' }}
+            type="submit"
+            value="Carrinho vazio"
+            className={styles.cartPurchase}
+            disabled
+          />
+        )}
       </form>
     </div>
   );

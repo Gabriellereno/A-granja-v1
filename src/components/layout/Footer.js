@@ -105,19 +105,17 @@ const Footer = () => {
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade; SameSite=None; Secure"
           ></iframe>
         </div>
       </div>
       <div className={styles.lastLine}>
         <div className={styles.lastLineContainer}>
           <p>
-            Agropecuária Deluka - CNPJ 18.728.941/0001-01 - Endereço: Av.
-            Azenha, 991 - Azenha - Porto Alegre, RS - CEP: 90160-002
+            Granja D'Lucca' - CNPJ 18.728.941/0001-01 - Endereço: Av. Azenha,
+            991 - Azenha - Porto Alegre, RS - CEP: 90160-002
           </p>
-          <p>
-            Copyright© 2023 Agropecuária Deluka - Todos os direitos reservados
-          </p>
+          <p>Copyright© 2023 Granja D'Lucca' - Todos os direitos reservados</p>
         </div>
       </div>
     </div>

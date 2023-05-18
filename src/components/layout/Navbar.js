@@ -113,7 +113,7 @@ const Navbar = () => {
                 <div className={styles.flipper}>
                   <div className={styles.front}>
                     <img
-                      src="/deluka.jpg"
+                      src="/granja d'lucca.jpg"
                       alt="A granja"
                       width="130px"
                       className={`${styles.logo}  ${styles.logo1}`}

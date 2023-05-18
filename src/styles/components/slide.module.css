@@ -65,17 +65,22 @@
   border-radius: 8px;
 }
 .slideContent h1 {
-  background-image: linear-gradient(180deg, #ffffff 100%, #fceb02 100%);
-  background-clip: text;
-  color: transparent;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #0d8d4280;
+  width: fit-content;
+  transition: all 0.5s;
 }
 .slideItem:hover h1 {
-  background-image: linear-gradient(180deg, #ffffff 55%, #fceb02 55%);
+  /* background-image: linear-gradient(180deg, #ffffff 55%, #fceb02 55%);
+  background-clip: text;
+  color: transparent; */
+  background: transparent;
 }
-.slideItem:hover .slideContent h1 span {
+/* .slideItem:hover .slideContent h1 span {
   color: #fceb02;
   transition: 0.5s;
-}
+} */
 .slideContent p {
   opacity: 0;
   font-size: 1.1rem;
@@ -88,7 +93,7 @@
 }
 
 .slideContent p span {
-  color: #fceb02;
+  color: #f7fa5b;
   font-size: 1.25rem;
   font-weight: 700;
 }
