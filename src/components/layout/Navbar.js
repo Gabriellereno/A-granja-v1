@@ -115,17 +115,17 @@ const Navbar = () => {
                     <img
                       src="/granja d'lucca.jpg"
                       alt="A granja"
-                      width="130px"
+                      width="150px"
                       className={`${styles.logo}  ${styles.logo1}`}
                     />
                   </div>
                   <div className={styles.back}>
-                    <img
+                    {/* <img
                       src="/logo.jpeg"
                       alt="A granja"
                       width="130px"
                       className={`${styles.logo}  ${styles.logo2}`}
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
