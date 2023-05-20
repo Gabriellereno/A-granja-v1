@@ -112,10 +112,12 @@ const Footer = () => {
       <div className={styles.lastLine}>
         <div className={styles.lastLineContainer}>
           <p>
-            Granja D'Lucca' - CNPJ 18.728.941/0001-01 - Endereço: Av. Azenha,
-            991 - Azenha - Porto Alegre, RS - CEP: 90160-002
+            Agropecuária D'Lucca' - CNPJ 18.728.941/0001-01 - Endereço: Av.
+            Azenha, 991 - Azenha - Porto Alegre, RS - CEP: 90160-002
           </p>
-          <p>Copyright© 2023 Granja D'Lucca' - Todos os direitos reservados</p>
+          <p>
+            Copyright© 2023 Agropecuária D'Lucca' - Todos os direitos reservados
+          </p>
         </div>
       </div>
     </div>
