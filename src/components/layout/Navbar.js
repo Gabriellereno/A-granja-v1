@@ -113,10 +113,16 @@ const Navbar = () => {
                 <div className={styles.flipper}>
                   <div className={styles.front}>
                     <img
-                      src="/granja d'lucca.jpg"
+                      src="/agropecuária d'lucca retângulo.jpg"
                       alt="A granja"
-                      width="150px"
+                      width="240px"
                       className={`${styles.logo}  ${styles.logo1}`}
+                    />
+                    <img
+                      src="/agropecuária d'lucca quadrado.jpg"
+                      alt="A granja"
+                      width="80px"
+                      className={`${styles.logo}  ${styles.logo2}`}
                     />
                   </div>
                   <div className={styles.back}>
@@ -159,7 +165,7 @@ const Navbar = () => {
                 <div className={styles.searchInput}>
                   <input
                     type="text"
-                    placeholder="Pesquise na Granja"
+                    placeholder="Pesquise na D'Lucca"
                     id="search"
                     value={searchText}
                     onChange={(e) => handleSearch(e)}

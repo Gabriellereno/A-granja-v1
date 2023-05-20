@@ -119,8 +119,8 @@
 .flipContainer {
   position: relative;
   top: 20px;
-  width: 150px;
-  height: 150px;
+  width: 240px;
+
   perspective: 1000px;
 }
 @keyframes rotate {
@@ -159,6 +159,10 @@
   border: #fceb01 2px outset;
   border-radius: 8px;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.342));
+}
+.logo2 {
+  display: none;
+  width: 70px;
 }
 
 .menu {
@@ -384,11 +388,22 @@
   .navbar {
     max-width: 1000px;
   }
+  .navbar .logo,
+  .flipContainer {
+    width: 200px;
+  }
   .menuItens {
     max-width: 700px;
   }
 }
 @media (max-width: 900px) {
+  .navbar .logo,
+  .flipContainer {
+    width: 180px;
+  }
+  .flipContainer {
+    top: 5px;
+  }
   .menuItens li a {
     font-size: 1rem;
   }
@@ -508,11 +523,9 @@
   }
 }
 @media (max-width: 650px) {
-  .navbar .flipContainer/* ,
-  .back,
-  .front */ {
-    width: 90px;
-    height: 90px;
+  .navbar .logo,
+  .flipContainer {
+    width: 150px;
   }
   .flipContainer {
     top: 0;
@@ -523,9 +536,7 @@
   .searchInput {
     max-width: 75%;
   }
-  .navbar .logo {
-    width: 90px;
-  }
+
   .filteredBg {
     height: 60vh;
     top: 85px;
@@ -554,10 +565,9 @@
   }
 }
 @media (max-width: 500px) {
+  .navbar .logo,
   .flipContainer {
-    top: 0px;
-    width: 90px;
-    height: 90px;
+    width: 100px;
   }
   .beforeFixedMenu {
     height: 130px;
@@ -624,6 +634,17 @@
   }
 }
 @media (max-width: 425px) {
+  .flipContainer,
+  .navbar .logo {
+    width: 80px;
+  }
+  .logo1 {
+    display: none;
+  }
+  .logo2 {
+    display: block;
+    width: 80px;
+  }
   .underMenu a {
     display: none;
   }
