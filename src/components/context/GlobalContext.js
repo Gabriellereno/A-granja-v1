@@ -4,6 +4,7 @@ import { ProductsDB } from '../products/ProductsDB';
 export const GlobalContext = React.createContext();
 
 export const GlobalStorage = ({ children }) => {
+  console.log(ProductsDB);
   const [message, setMessage] = React.useState('oi%0aoi');
   const [homeProducts, setHomeProducts] = React.useState();
   const [propsFilter, setPropsFilter] = React.useState(false);
