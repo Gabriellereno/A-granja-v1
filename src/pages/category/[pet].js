@@ -45,7 +45,7 @@ const Category = () => {
   return (
     <div>
       <Head>
-        <title>Granja D'Lucca - {title}</title>
+        <title>Agropecuária D'Lucca - {title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>

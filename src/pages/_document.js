@@ -5,14 +5,14 @@ export default function Document() {
     <Html lang="pt-br">
       <Head>
         <meta name="language" content="Portuguese"></meta>
-        <meta name="author" content="Granja D'Lucca"></meta>
+        <meta name="author" content="Agropecuária D'Lucca"></meta>
         <meta
           name="keywords"
-          content="Granja D'Lucca, agropecuária, pet shop, animais de estimação, alimentos para animais, acessórios para animais, serviços para animais, veterinário, consulta veterinária, vacinas veterinária"
+          content="Agropecuária D'Lucca, agropecuária, pet shop, animais de estimação, alimentos para animais, acessórios para animais, serviços para animais, veterinário, consulta veterinária, vacinas veterinária"
         ></meta>
         <meta
           name="description"
-          content="Granja D'Lucca é uma agropecuária e pet shop especializada em produtos e serviços para animais de estimação. Oferecemos consulta veterinária com preço acessível e uma ampla variedade de alimentos, acessórios e serviços de qualidade. Visite-nos hoje mesmo!"
+          content="Agropecuária D'Lucca é uma agropecuária e pet shop especializada em produtos e serviços para animais de estimação. Oferecemos consulta veterinária com preço acessível e uma ampla variedade de alimentos, acessórios e serviços de qualidade. Visite-nos hoje mesmo!"
         ></meta>
 
         <link

@@ -28,7 +28,7 @@ export default function Home() {
     <>
       {' '}
       <Head>
-        <title>Granja D'Lucca - A loja do seu pet</title>
+        <title>Agropecuária D'Lucca - A loja do seu pet</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
