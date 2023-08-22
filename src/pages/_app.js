@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { GlobalStorage } from '@/components/context/GlobalContext';
 import { CartStorage } from '@/components/context/CartContext';
+import Script from 'next/script';
 
 export default function App({ Component, pageProps }) {
   return (
