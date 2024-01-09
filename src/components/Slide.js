@@ -1,10 +1,32 @@
 import React from 'react';
 import styles from '@/styles/components/slide.module.css';
+import Link from 'next/link';
 
 const Slide = () => {
   return (
     <section className={styles.slideBg}>
       <div className={styles.slide}>
+        <div className={styles.slideItem}>
+          <div className={styles.slideContent}>
+            <Link href={'/viagem-com-meu-pet'}>
+              <h1>
+                <span>
+                  Viagem <br />
+                  com meu pet
+                </span>
+              </h1>
+              <br />
+              <p>
+                "Veja o que é <span>necessário</span> para <span>viajar</span>{' '}
+                com o pet."
+                <br />
+                <br />
+                Leia aqui.
+              </p>
+            </Link>
+          </div>
+        </div>
+
         <div className={styles.slideItem}>
           <div className={styles.slideContent}>
             <h1>
